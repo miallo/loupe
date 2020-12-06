@@ -458,15 +458,15 @@ function! s:map(keys, name)
   let l:case=get(g:, 'LoupeCaseSettingsAlways', 1)
 
   if a:keys ==# '#'
-    let l:action=l:case ? ":let @/='\\V\\<'.loupe#private#escape(expand('<cword>')).'\\>'<CR>:let v:searchforward=0<CR>n" : '#'
+    let l:action=l:case ? ":let @/='\\V\\<'.loupe#private#escape(expand('<cword>')).'\\>'<CR>:let v:searchforward=0<CR><count>n" : '#'
   elseif a:keys ==# '*'
-    let l:action=l:case ? ":let @/='\\V\\<'.loupe#private#escape(expand('<cword>')).'\\>'<CR>:let v:searchforward=1<CR>n" : '*'
+    let l:action=l:case ? ":let @/='\\V\\<'.loupe#private#escape(expand('<cword>')).'\\>'<CR>:let v:searchforward=1<CR><count>n" : '*'
   elseif a:keys ==# 'N'
     let l:action='N'
   elseif a:keys ==# 'g#'
-    let l:action=l:case ? ":let @/='\\V'.loupe#private#escape(expand('<cword>'))<CR>:let v:searchforward=0<CR>n" : 'g#'
+    let l:action=l:case ? ":let @/='\\V'.loupe#private#escape(expand('<cword>'))<CR>:let v:searchforward=0<CR><count>n" : 'g#'
   elseif a:keys ==# 'g*'
-    let l:action=l:case ? ":let @/='\\V'.loupe#private#escape(expand('<cword>'))<CR>:let v:searchforward=1<CR>n" : 'g*'
+    let l:action=l:case ? ":let @/='\\V'.loupe#private#escape(expand('<cword>'))<CR>:let v:searchforward=1<CR><count>n" : 'g*'
   elseif a:keys ==# 'n'
     let l:action='n'
   endif
