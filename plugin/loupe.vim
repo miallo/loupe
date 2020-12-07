@@ -458,7 +458,7 @@ function! s:map(keys, name)
   let l:case=get(g:, 'LoupeCaseSettingsAlways', 1)
 
   if a:keys ==# '#'
-    let l:action=l:case ? ":let @/='\\V\\<'.loupe#private#escape(expand('<cword>')).'\\>'<CR>:let v:searchforward=0<CR><count>n" : '#'
+    let l:action=l:case ? ":let @/='\\V\\<'.loupe#private#escape(expand('<cword>')).'\\>'<CR>:let v:searchforward=0<CR>". v:count . "n" : '#'
   elseif a:keys ==# '*'
     let l:action=l:case ? ":let @/='\\V\\<'.loupe#private#escape(expand('<cword>')).'\\>'<CR>:let v:searchforward=1<CR><count>n" : '*'
   elseif a:keys ==# 'N'
