@@ -472,9 +472,9 @@ function! s:map(keys, name)
   endif
 
   if !hasmapto('<Plug>(Loupe' . a:name . ')')
-    execute 'nmap <expr> <silent> ' . a:keys . ' <Plug>(Loupe' . a:name . ')'
+    execute 'nmap <silent> ' . a:keys . ' <Plug>(Loupe' . a:name . ')'
   endif
-  execute 'nnoremap <silent> <Plug>(Loupe' . a:name . ')' .
+  execute 'nnoremap <expr> <silent> <Plug>(Loupe' . a:name . ')' .
         \ ' ' .
         \ l:action .
         \ 'zv' .
